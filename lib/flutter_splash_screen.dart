@@ -10,4 +10,7 @@ class FlutterSplashScreen {
   static Future<Null> hide() async {
     await _channel.invokeMethod('hide');
   }
+  static Future<Null> show() async {
+    await _channel.invokeMethod('show');
+  }
 }
