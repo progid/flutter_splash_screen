@@ -1,30 +1,8 @@
-/**
- * SplashScreen
- * 启动屏
- * from：http://www.devio.org
- * Author:CrazyCodeBoy
- * GitHub:https://github.com/crazycodeboy
- * Email:crazycodeboy@gmail.com
- */
 #import "FlutterSplashScreenPlugin.h"
+#import <flutter_splash_screen/flutter_splash_screen-Swift.h>
 
 @implementation FlutterSplashScreenPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"flutter_splash_screen"
-            binaryMessenger:[registrar messenger]];
-  FlutterSplashScreenPlugin* instance = [[FlutterSplashScreenPlugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
+  [SwiftFlutterSplashScreenPlugin registerWithRegistrar:registrar];
 }
-
-- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-  if ([@"show" isEqualToString:call.method]) {
-      
-  } else if ([@"hide" isEqualToString:call.method]) {
-      
-  } else {
-    result(FlutterMethodNotImplemented);
-  }
-}
-
 @end
